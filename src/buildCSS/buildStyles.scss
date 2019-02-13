@@ -1,0 +1,107 @@
+@import 'mixin.scss';
+@import 'smart-grid.scss';
+
+@include reset();
+
+body, html {
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+.proportion {
+	position: relative;
+}
+
+.ratio {
+	padding-top: 61%;
+	height: 0;
+}
+
+.container {
+	max-width: 955px;
+	margin: 0 auto;
+	padding: 15px 0;
+}
+
+.flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	align-content: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.flex1, .flex3 {
+	display: flex;
+	flex-direction: column;
+	justify-content:space-between;
+	flex: 0 1 30%;
+	margin: 0 1%;
+}
+
+.flex2 {
+	display: flex;
+	flex: 0 1 35%;
+}
+
+@include md-screen (690px) {
+	.flex-wrap {
+		flex-direction:column;
+	}
+	.ratio {
+		padding-top:118.7%;
+	}
+
+	.flex1 {
+		margin:0 0.6%;
+		width:29%;
+		flex:0 1 50%;
+		align-items:flex-start
+	}
+
+	.flex2 {
+		width:66%;
+		order:-1;
+		flex:0 1 100%;
+		margin:0 0.72%;
+		align-items:flex-end;
+	}
+
+	.flex3 {
+		width:29%;
+		flex:0 1 50%;
+		margin:0 .6%;
+		align-items:flex-start
+	}
+
+}
+
+@include sd-screen(480px) {
+	.flex-wrap {
+		flex-direction:row;
+		align-content:center;
+		width:auto;
+		height:auto;
+		}
+
+	.flex2 {
+		width:100%
+	}
+
+	.proportione {
+		position:inherit;
+	}
+
+	.flex1,.flex3
+	{
+		flex:1 1 200px;
+	}
+}
